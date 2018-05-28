@@ -1,6 +1,6 @@
 FROM tomcat:8.0-jre8
 MAINTAINER Cristian Betivu cbetivu@gmail.com
-RUN apt update -y && apt upgrade -y
+RUN apt update -y && apt upgrade -y && apt install git -y
 RUN rm -rf /usr/local/tomcat/webapps
 RUN mkdir /usr/local/tomcat/webapps
 ADD @project.build.finalName@.war /usr/local/tomcat/webapps/ROOT.war
